@@ -42,6 +42,31 @@ stack test --fast example-server     # Test server only
 
 ## Language Extensions & Standards
 
+This project uses GHC2021 as the base language standard with additional extensions from `package-common.yaml`.
+
+### Common Extensions
+
+**Enabled by default**:
+
+- DefaultSignatures
+- DeriveAnyClass
+- DerivingVia
+- DuplicateRecordFields
+- FunctionalDependencies
+- MultiWayIf
+- OverloadedLabels
+- OverloadedRecordDot
+- OverloadedStrings
+- PackageImports
+- QuasiQuotes
+- RecordWildCards
+- StrictData
+- TypeFamilies
+- DataKinds
+- DerivingStrategies
+- GADTs
+- LambdaCase
+
 ### Record Access
 
 Use `OverloadedRecordDot` with `NoFieldSelectors` for record field access:
@@ -149,12 +174,9 @@ makeEffect ''TagRepository
 -- Implement interpreter
 runTagRepository :: (MySQLService :> es) => Eff (TagRepository : es) a -> Eff es a
 runTagRepository = interpret $ \_ -> \case
-    CreateTag name origin -> do
-        runDBInTransaction $ createTag' name origin
-    LookupTagById tagId -> do
-        runDBInTransaction $ lookupByTagId tagId
-    DeleteTag tagId -> do
-        runDBInTransaction $ deleteTagByTagId tagId
+    CreateTag name origin -> ...
+    LookupTagById tagId -> ...
+    DeleteTag tagId -> ...
 
 -- Use effect with type constraint
 processTag :: (TagRepository :> es) => TagId -> Eff es ()
