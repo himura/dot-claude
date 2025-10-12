@@ -1,0 +1,39 @@
+- &defaults
+  author:            Takahiro HIMURA
+  maintainer:        taka@himura.jp
+  license:           BSD3
+  homepage:          https://example.com
+  git:               git@example.com:repository.git
+
+  language: GHC2021
+
+  default-extensions:
+  - DefaultSignatures
+  - DeriveAnyClass
+  - DerivingVia
+  - DuplicateRecordFields
+  - FunctionalDependencies
+  - MultiWayIf
+  - OverloadedLabels
+  - OverloadedRecordDot
+  - OverloadedStrings
+  - PackageImports
+  - QuasiQuotes
+  - RecordWildCards
+  - StrictData
+  - TypeFamilies
+  # Enabled by GHC2024 (fourmolu not supported yet)
+  - DataKinds
+  - DerivingStrategies
+  - GADTs
+  - LambdaCase
+
+  ghc-options:
+  - -Wall
+  - -Wcompat
+  - -Widentities
+  - -Wincomplete-record-updates
+  - -Wincomplete-record-selectors
+  - -Wincomplete-uni-patterns
+  - -Wredundant-constraints
+  - -fplugin=Effectful.Plugin
