@@ -1,4 +1,12 @@
 {
+  "includeCoAuthoredBy": false,
+  "permissions": {
+    "allow": [
+      "Bash(stack test:*)",
+      "Read(**)",
+      "Edit(docs/**)"
+    ]
+  },
   "hooks": {
     "PreToolUse": [
       {
