@@ -24,6 +24,10 @@ stack test --fast example-server     # Test server only
 - "Fix UTF-8 encoding in error responses"
 - "Refactor ImageQuery to use TagCacheService"
 
+## Pre-PR Checks
+
+- stack test --fast
+
 ## Architecture
 
 ### Packages
